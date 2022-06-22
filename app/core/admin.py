@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from .models import User
+from . import models
 
 
-@admin.register(User)
+@admin.register(models.User)
 class UserAdmin(BaseUserAdmin):
 
     ordering = ['id']
@@ -52,4 +52,7 @@ class UserAdmin(BaseUserAdmin):
     #     ),
     # )
 
+@admin.register(models.Recipe)
+class RecipeAdmin(admin.ModelAdmin):
+    pass
     
